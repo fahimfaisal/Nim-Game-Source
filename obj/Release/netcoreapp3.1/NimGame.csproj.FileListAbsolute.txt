@@ -1,0 +1,13 @@
+D:\Nim Game\NimGame\bin\Release\netcoreapp3.1\NimGame.exe
+D:\Nim Game\NimGame\bin\Release\netcoreapp3.1\NimGame.deps.json
+D:\Nim Game\NimGame\bin\Release\netcoreapp3.1\NimGame.runtimeconfig.json
+D:\Nim Game\NimGame\bin\Release\netcoreapp3.1\NimGame.runtimeconfig.dev.json
+D:\Nim Game\NimGame\bin\Release\netcoreapp3.1\NimGame.dll
+D:\Nim Game\NimGame\bin\Release\netcoreapp3.1\NimGame.pdb
+D:\Nim Game\NimGame\obj\Release\netcoreapp3.1\NimGame.csprojAssemblyReference.cache
+D:\Nim Game\NimGame\obj\Release\netcoreapp3.1\NimGame.AssemblyInfoInputs.cache
+D:\Nim Game\NimGame\obj\Release\netcoreapp3.1\NimGame.AssemblyInfo.cs
+D:\Nim Game\NimGame\obj\Release\netcoreapp3.1\NimGame.csproj.CoreCompileInputs.cache
+D:\Nim Game\NimGame\obj\Release\netcoreapp3.1\NimGame.dll
+D:\Nim Game\NimGame\obj\Release\netcoreapp3.1\NimGame.pdb
+D:\Nim Game\NimGame\obj\Release\netcoreapp3.1\NimGame.genruntimeconfig.cache

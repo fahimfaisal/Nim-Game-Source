@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "w1gEhV6aKxI2U59iXrhmde8YEhk1t7e+5x+Yu5THmG1ahwFTXJ3Ky9h8jPNC4cYbAIzvs9yZ9D5LOYqYoKHERQ==",
+  "success": true,
+  "projectFilePath": "D:\\Nim Game\\NimGame\\NimGame.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Navid\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.7\\microsoft.netcore.app.runtime.win-x86.3.1.7.nupkg.sha512",
+    "C:\\Users\\Navid\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.7\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.7.nupkg.sha512",
+    "C:\\Users\\Navid\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.7\\microsoft.aspnetcore.app.runtime.win-x86.3.1.7.nupkg.sha512"
+  ],
+  "logs": []
+}
