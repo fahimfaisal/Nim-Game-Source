@@ -19,14 +19,24 @@ namespace NimGame
         {
 
         }
-        public void start()
+        public int start()
         {
+
+            Console.WriteLine("Please Select a Game mode[1/2]");
+            Console.WriteLine();
+            Console.WriteLine("1. Normal Mode");
+            Console.WriteLine();
+            Console.WriteLine("2. Misere Mode");
+
+            int input = Convert.ToInt32(Console.ReadLine());
 
             int pileNumber = rand.Next(2, 6);
 
             gameTree.GeneratePile(pileNumber);
 
             gameTree.PrintStack();
+
+            return input;
 
         }
 
@@ -53,7 +63,7 @@ namespace NimGame
                     if (xor < pile.value)
                     {
                         int op = pile.value - xor;
-                        pile.value = pile.value - op;
+                        pile.remove(op);
                         Console.WriteLine("Computer Removed " + op + " object from Pile " + pile.name);
                         break;
                     }
@@ -226,9 +236,11 @@ namespace NimGame
 
             while (true)
             {
-
-
+              
+                
                 Computer();
+                
+               
                 gameTree.PrintStack();
                 if (CheckStatus() == 1)
                 {
@@ -261,7 +273,184 @@ namespace NimGame
             Console.Write(" FAHIM FAISAL KHAN");
             Console.WriteLine();
             Console.WriteLine("Student ID : 219361242");
-            Thread.Sleep(3000);
+            Thread.Sleep(millsec);
+        }
+        
+        public void MisereComputer()
+        {
+            Console.WriteLine("It's Computers Turn");
+
+            int count = 0;
+
+            int take = 0;
+            foreach(Pile pile  in gameTree.Piles)
+            {
+                if (pile.value > 1)
+                {
+                    take++;
+                }
+
+            }
+           
+
+
+
+            foreach (Pile pile in gameTree.Piles)
+            {
+                
+              
+
+
+                if (gameTree.NimSum() != 0)
+                {
+
+
+                    int xor = gameTree.FindXor(pile.value, gameTree.NimSum());
+
+                    if (xor < pile.value)
+                    {
+                        int op = pile.value - xor;
+
+                        if(take == 1)
+                        {
+                            if (op == pile.value)
+                            {
+                                op = op - 1;
+
+                            }
+                            else
+                            {
+                                op = op + 1;
+                            }
+                        }
+                      
+                        pile.remove(op);
+                        Console.WriteLine("Computer Removed " + op + " object from Pile " + pile.name);
+                        break;
+                    }
+
+                }
+                else
+                {
+                    if (pile.value > 1)
+                    {
+                        int ran = rand.Next(1, pile.value - 1);
+                        pile.remove(ran);
+                        Console.WriteLine("Computer Removed " + ran + " object from Pile " + pile.name);
+                        break;
+                    }
+                    else
+                    {
+                        count++;
+                    }
+
+
+
+                }
+
+
+            }
+
+            if (count == gameTree.Piles.Count)
+            {
+                foreach (Pile pile in gameTree.Piles)
+                {
+                    if (pile.value == 1)
+                    {
+                        pile.remove(1);
+                        Console.WriteLine("Computer Removed 1 object from Pile " + pile.name);
+                        break;
+                    }
+
+                }
+            }
+
+
+
+        }
+
+        public void MisereComputerFirst()
+        {
+            if (gameTree.NimSum() == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("You will win this Game if you play optimally");
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Computer will win this game");
+            }
+
+            while (true)
+            {
+
+
+                MisereComputer();
+
+
+                gameTree.PrintStack();
+                if (CheckStatus() == 1)
+                {
+                    Console.WriteLine("CONGRATULATIONS!!! You Won the Game");
+                    gameTree.Piles.Clear();
+                    break;
+                }
+
+
+                Human();
+                gameTree.PrintStack();
+                if (CheckStatus() == 1)
+                {
+                    Console.WriteLine("Sorry :( You lose the Game");
+                    gameTree.Piles.Clear();
+                    break;
+                }
+
+            }
+
+        }
+        public void MisereHumanFirst()
+        {
+            if (gameTree.NimSum() == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("You will win this Game if you play optimally");
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Computer will win this game");
+            }
+
+            while (true)
+            {
+
+
+
+
+                Human();
+                gameTree.PrintStack();
+                if (CheckStatus() == 1)
+                {
+                    Console.WriteLine("SORRY :( You lose the Game");
+                    gameTree.Piles.Clear();
+                    break;
+                }
+
+
+                MisereComputer();
+                gameTree.PrintStack();
+                if (CheckStatus() == 1)
+                {
+                    Console.WriteLine("CONGRATULATIONS !!! You Won the Game");
+                    gameTree.Piles.Clear();
+                    break;
+                }
+
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Threading;
 
 namespace NimGame
 {
@@ -20,21 +21,53 @@ namespace NimGame
           while(true)
           {
 
-                NimGame.start();
+                int play = NimGame.start();
 
-                int start = rand.Next(1, 3);
-
-                if (start == 1)
+                if (play == 1)
                 {
+                    Console.WriteLine("This is the normal mode of the Game");
+                    Console.WriteLine("Take the last object from piles to win the Game !!!!");
 
-                    Console.WriteLine("Player 1: Computer will start the Game");
-                    NimGame.ComputerFirst();
+                    int start = rand.Next(1, 3);
+                    //Normal Mode
+                    
+                    if (start == 1)
+                    {
+
+                        Console.WriteLine("Player 1: Computer will start the Game");
+                        NimGame.ComputerFirst();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Player 2: You will start the Game");
+                        NimGame.Humanfirst();
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Player 2: You will start the Game");
-                    NimGame.Humanfirst();
+
+                    Console.WriteLine("This is the Misere mode of the Game");
+                    Console.WriteLine("Force the opponent to take the last object from piles to win the Game !!!!");
+                    // misere mode
+                    int start1 = rand.Next(1, 3);
+
+                    if (start1 == 1)
+                    {
+                        Console.WriteLine("Player 1: Computer will start the Game");
+                        NimGame.MisereComputerFirst();
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Player 2: You will start the Game");
+                        NimGame.MisereHumanFirst();
+                    }
+
+
                 }
+
+
+              
 
                 Console.WriteLine();
                 Console.WriteLine("Do you want to play again ??[Y/N]");
